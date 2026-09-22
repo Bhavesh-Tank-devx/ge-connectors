@@ -1,0 +1,1525 @@
+
+
+ Overview &nbsp;|&nbsp; Gemini Enterprise &nbsp;|&nbsp; Google Cloud Documentation 
+
+ Skip to main content
+
+ Documentation
+
+ close 
+
+Get Started
+
+ Get Started with Google Cloud
+
+ Product List
+
+ Cloud Customer Care
+
+Featured Products
+
+ Agent Platform
+
+ Apigee API Management
+
+ BigQuery
+
+ Compute Engine
+
+ Cloud CDN
+
+ Cloud Run
+
+ Cloud Storage
+
+ Cloud SQL
+
+ Gemini Enterprise
+
+ Google Kubernetes Engine
+
+ Looker
+
+Cross-product Tools
+
+ Access and resources management
+
+ Costs and usage management
+
+ Infrastructure as code
+
+ SDK, languages, frameworks, and tools
+
+Technology Areas
+
+ AI and ML
+
+ Application development
+
+ Application hosting
+
+ Compute
+
+ Data analytics and pipelines
+
+ Databases
+
+ Distributed, hybrid, and multicloud
+
+ Industry solutions
+
+ Migration
+
+ Networking
+
+ Observability and monitoring
+
+ Security
+
+ Storage
+
+ / 
+
+ Console
+
+ English 
+
+ Deutsch 
+
+ Español – América Latina 
+
+ Français 
+
+ Indonesia 
+
+ Italiano 
+
+ Português – Brasil 
+
+ עברית 
+
+ 中文 – 简体 
+
+ 中文 – 繁體 
+
+ 日本語 
+
+ 한국어 
+
+ Sign in 
+
+ Gemini Enterprise
+
+ Start free 
+
+ Overview
+
+ Administrator guide
+
+ App user guide
+
+ Developer guide
+
+ Gemini Notebook Enterprise
+
+ AlphaEvolve
+
+ Reference
+
+ Resources
+
+ Documentation
+
+ More
+
+ Overview
+
+ Administrator guide
+
+ App user guide
+
+ Developer guide
+
+ Gemini Notebook Enterprise
+
+ AlphaEvolve
+
+ Reference
+
+ Resources
+
+ Console
+
+ Get started 
+
+ Set up Gemini Enterprise 
+
+ Gemini Enterprise Quickstart Guide 
+
+ Manage subscriptions and licenses 
+
+ Get subscriptions and assign licenses 
+
+ Frequently asked questions 
+
+ Configure security and access 
+
+ Security Overview 
+
+ IAM roles and permissions 
+
+ Configure identity provider 
+
+ Configure access controls for apps 
+
+ Secure your app with VPC Service Controls 
+
+ Manage resources with custom organization policies 
+
+ Configure private UI access 
+
+ Work with Model Armor 
+
+ Enable Model Armor 
+
+ Enable Model Armor for Gemini Notebook Enterprise 
+
+ Correlate Model Armor logs with Gemini Enterprise logs 
+
+ Protect sensitive data in sources 
+
+ Secure custom data sources 
+
+ Map external identities 
+
+ Configure access controls for custom data sources 
+
+ Enable Access Transparency 
+
+ Use customer-managed encryption keys 
+
+ Turn off Gemini Enterprise 
+
+ Manage costs 
+
+ Overview 
+
+ View feature usage 
+
+ Configure overages 
+
+ View costs 
+
+ Connect to your enterprise data 
+
+ About apps and data stores 
+
+ Connect data 
+
+ Introduction to connectors and data stores 
+
+ Introduction to self-hosted data sources 
+
+ Prepare data for custom data sources 
+
+ Connect a Google data source 
+
+ Overview 
+
+ Connect Google Calendar 
+
+ Overview 
+
+ Set up a Google Calendar data store 
+
+ Configure OAuth for Google Calendar 
+
+ Connect Google Chat 
+
+ Overview 
+
+ Set up a Google Chat data store 
+
+ Configure OAuth for Google Chat 
+
+ Add filters to a Google Chat data store 
+
+ Connect Google Compute Engine 
+
+ Overview 
+
+ Set up a Google Compute Engine data store 
+
+ Google Compute Engine configuration 
+
+ Connect Google Drive 
+
+ Overview 
+
+ Set up a Google Drive data store 
+
+ Configure OAuth for Google Drive 
+
+ Add filters to a Google Drive data store 
+
+ Connect Google Stitch 
+
+ Overview 
+
+ Set up a Google Stitch data store 
+
+ Google Stitch configuration 
+
+ Connect Gmail 
+
+ Overview 
+
+ Set up a Gmail data store 
+
+ Configure OAuth for Gmail 
+
+ Import from BigQuery 
+
+ Import from Cloud Storage 
+
+ Sync from Google Groups 
+
+ Connect to Google Sites 
+
+ Connect to Google Sites 
+
+ Add filters to a Google Sites data store 
+
+ Sync people data 
+
+ Import people data from a custom source 
+
+ Enable Gemini Notebook Enterprise as a search source 
+
+ Import from Cloud SQL 
+
+ Import from Spanner 
+
+ Import from Firestore 
+
+ Import from Bigtable 
+
+ Import from AlloyDB for PostgreSQL 
+
+ Connect to data from AlloyDB for PostgreSQL 
+
+ Create a data store using Terraform 
+
+ Connect a third-party data source 
+
+ Overview 
+
+ View data store sync activity and set up alerts 
+
+ Configure static IP egress 
+
+ Connect Adobe Workfront 
+
+ Overview 
+
+ Set up an Adobe Workfront data store 
+
+ Connect Airtable 
+
+ Overview 
+
+ Set up an Airtable data store 
+
+ Connect AirOps 
+
+ Overview 
+
+ Set up an AirOps data store 
+
+ Connect Aiwyn Tax 
+
+ Overview 
+
+ Set up an Aiwyn Tax data store 
+
+ Connect AllTrails 
+
+ Overview 
+
+ Set up an AllTrails data store 
+
+ Connect Apollo GraphOS 
+
+ Overview 
+
+ Set up an Apollo GraphOS data store 
+
+ Connect Asana 
+
+ Overview 
+
+ Set up an Asana data store 
+
+ Connect Atlan 
+
+ Overview 
+
+ Set up an Atlan data store 
+
+ Connect Attio 
+
+ Overview 
+
+ Set up an Attio data store 
+
+ Connect Autodesk Product Help 
+
+ Overview 
+
+ Set up an Autodesk Product Help data store 
+
+ Connect AWS Marketplace 
+
+ Overview 
+
+ Set up an AWS Marketplace data store 
+
+ Connect Bitly 
+
+ Overview 
+
+ Set up a Bitly data store 
+
+ Connect Blockscout 
+
+ Overview 
+
+ Set up a Blockscout data store 
+
+ Connect Box 
+
+ Overview 
+
+ Set up a Box data store 
+
+ Connect Calendly 
+
+ Overview 
+
+ Set up a Calendly data store 
+
+ Connect Campfire 
+
+ Overview 
+
+ Set up a Campfire data store 
+
+ Connect Cisco Workspaces 
+
+ Overview 
+
+ Set up a Cisco Workspaces data store 
+
+ Connect Clay 
+
+ Overview 
+
+ Set up a Clay data store 
+
+ Connect Cohesity 
+
+ Overview 
+
+ Set up a Cohesity data store 
+
+ Connect CoinDesk 
+
+ Overview 
+
+ Set up a CoinDesk data store 
+
+ Connect Confluence Cloud 
+
+ Overview 
+
+ Set up a Confluence Cloud data store 
+
+ Confluence Cloud configuration 
+
+ Connect Confluence Data Center 
+
+ Overview 
+
+ Set up a Confluence Data Center data store 
+
+ Confluence Data Center configuration 
+
+ Connect CourtListener 
+
+ Overview 
+
+ Set up a CourtListener data store 
+
+ Connect Courtroom5 
+
+ Overview 
+
+ Set up a Courtroom5 data store 
+
+ Connect Crossbeam 
+
+ Overview 
+
+ Set up a Crossbeam data store 
+
+ Connect Crypto 
+
+ Overview 
+
+ Set up a Crypto data store 
+
+ Connect Descript 
+
+ Overview 
+
+ Set up a Descript data store 
+
+ Connect Dice 
+
+ Overview 
+
+ Set up a Dice data store 
+
+ Connect Docusign 
+
+ Overview 
+
+ Set up a Docusign data store 
+
+ Connect Dropbox 
+
+ Overview 
+
+ Set up a Dropbox data store 
+
+ Dropbox configuration 
+
+ Connect D&amp;B Commercial Graph 
+
+ Overview 
+
+ Set up a D&amp;B Commercial Graph data store 
+
+ Connect Daloopa 
+
+ Overview 
+
+ Set up a Daloopa data store 
+
+ Connect Dynamics 365 
+
+ Overview 
+
+ Set up a Dynamics 365 data store 
+
+ Dynamics 365 configuration 
+
+ Connect Egnyte 
+
+ Overview 
+
+ Set up an Egnyte data store 
+
+ Connect Excalidraw 
+
+ Overview 
+
+ Set up an Excalidraw data store 
+
+ Connect FactSet AI-Ready Data 
+
+ Overview 
+
+ Set up a FactSet AI-Ready Data data store 
+
+ Connect Fibery 
+
+ Overview 
+
+ Set up a Fibery data store 
+
+ Connect Fiscal.ai 
+
+ Overview 
+
+ Set up a Fiscal.ai data store 
+
+ Connect Freshservice 
+
+ Overview 
+
+ Set up a Freshservice data store 
+
+ Connect Fullstory 
+
+ Overview 
+
+ Set up a Fullstory data store 
+
+ Connect Gamma 
+
+ Overview 
+
+ Set up a Gamma data store 
+
+ Connect Hex 
+
+ Overview 
+
+ Set up a Hex data store 
+
+ Connect HubSpot 
+
+ Overview 
+
+ Set up a HubSpot data store 
+
+ Connect Hugging Face 
+
+ Overview 
+
+ Set up a Hugging Face data store 
+
+ Connect iManage platform 
+
+ Overview 
+
+ Set up an iManage platform data store 
+
+ Connect Intercom 
+
+ Overview 
+
+ Set up an Intercom data store 
+
+ Connect Invideo 
+
+ Overview 
+
+ Set up an Invideo data store 
+
+ Connect GitHub 
+
+ Overview 
+
+ Set up a GitHub data store 
+
+ GitHub configuration 
+
+ Connect GitLab 
+
+ Overview 
+
+ Set up a GitLab data store 
+
+ GitLab configuration 
+
+ Connect Globalping 
+
+ Overview 
+
+ Set up a Globalping data store 
+
+ Connect GoDaddy 
+
+ Overview 
+
+ Set up a GoDaddy data store 
+
+ Connect Gong 
+
+ Overview 
+
+ Set up a Gong data store 
+
+ Connect Granted 
+
+ Overview 
+
+ Set up a Granted data store 
+
+ Connect Guru 
+
+ Overview 
+
+ Set up a Guru data store 
+
+ Connect Jira Cloud 
+
+ Overview 
+
+ Set up a Jira Cloud data store 
+
+ Jira Cloud configuration 
+
+ Connect Jira Data Center 
+
+ Overview 
+
+ Set up a Jira Data Center data store 
+
+ Jira Data Center configuration 
+
+ Connect LastMinute 
+
+ Overview 
+
+ Set up a LastMinute data store 
+
+ Connect Kiwi 
+
+ Overview 
+
+ Set up a Kiwi data store 
+
+ Connect Kiwi.com 
+
+ Overview 
+
+ Set up a Kiwi.com data store 
+
+ Connect LegalZoom 
+
+ Overview 
+
+ Set up a LegalZoom data store 
+
+ Connect Linear 
+
+ Overview 
+
+ Set up a Linear data store 
+
+ Linear configuration 
+
+ Connect Lovable 
+
+ Overview 
+
+ Set up a Lovable data store 
+
+ Connect LumApps 
+
+ Overview 
+
+ Set up a LumApps data store 
+
+ LumApps configuration 
+
+ Connect MailerLite 
+
+ Overview 
+
+ Set up a MailerLite data store 
+
+ Connect Mercury 
+
+ Overview 
+
+ Set up a Mercury data store 
+
+ Connect Mermaid Chart 
+
+ Overview 
+
+ Set up a Mermaid Chart data store 
+
+ Connect Midpage 
+
+ Overview 
+
+ Set up a Midpage data store 
+
+ Connect Microsoft Entra ID 
+
+ Connect Microsoft Learn 
+
+ Overview 
+
+ Set up a Microsoft Learn data store 
+
+ Connect Microsoft OneDrive 
+
+ Overview 
+
+ Set up a Microsoft OneDrive data store 
+
+ Add filters to a Microsoft OneDrive data store 
+
+ Microsoft OneDrive configuration 
+
+ Connect Microsoft Outlook 
+
+ Overview 
+
+ Set up a Microsoft Outlook data store 
+
+ Microsoft Outlook configuration 
+
+ Connect Microsoft SharePoint Online 
+
+ Overview 
+
+ Set up a Microsoft SharePoint data store 
+
+ Add filters to a Microsoft SharePoint data store 
+
+ Microsoft SharePoint configuration 
+
+ Connect Microsoft Teams 
+
+ Overview 
+
+ Set up a Microsoft Teams data store 
+
+ Microsoft Teams configuration 
+
+ Connect Miro 
+
+ Overview 
+
+ Set up a Miro data store 
+
+ Connect Monday 
+
+ Overview 
+
+ Set up a Monday data store 
+
+ Monday configuration 
+
+ Connect Moody&#39;s 
+
+ Overview 
+
+ Set up a Moody&#39;s data store 
+
+ Connect MSCI 
+
+ Overview 
+
+ Set up an MSCI data store 
+
+ Connect NetDocuments 
+
+ Overview 
+
+ Set up a NetDocuments data store 
+
+ Connect Nexla 
+
+ Overview 
+
+ Set up a Nexla data store 
+
+ Connect Notion 
+
+ Overview 
+
+ Set up a Notion data store 
+
+ Notion configuration 
+
+ Connect Open Targets 
+
+ Overview 
+
+ Set up an Open Targets data store 
+
+ Connect Oracle NetSuite 
+
+ Overview 
+
+ Set up an Oracle NetSuite data store 
+
+ Oracle NetSuite configuration 
+
+ Connect PagerDuty 
+
+ Overview 
+
+ Set up a PagerDuty data store 
+
+ PagerDuty configuration 
+
+ Connect PandaDoc 
+
+ Overview 
+
+ Set up a PandaDoc data store 
+
+ Connect Pendo 
+
+ Overview 
+
+ Set up a Pendo data store 
+
+ Connect pg-aiguide 
+
+ Overview 
+
+ Set up a pg-aiguide data store 
+
+ Connect Pylon 
+
+ Overview 
+
+ Set up a Pylon data store 
+
+ Connect Ramp 
+
+ Overview 
+
+ Set up a Ramp data store 
+
+ Connect Relativity 
+
+ Overview 
+
+ Set up a Relativity data store 
+
+ Relativity configuration 
+
+ Connect S&amp;P Global - Deterministic Retrieval 
+
+ Overview 
+
+ Set up a S&amp;P Global - Deterministic Retrieval data store 
+
+ Connect Salesforce 
+
+ Overview 
+
+ Set up a Salesforce data store 
+
+ Salesforce configuration 
+
+ Connect Sanity 
+
+ Overview 
+
+ Set up a Sanity data store 
+
+ Connect ServiceM8 
+
+ Overview 
+
+ Set up a ServiceM8 data store 
+
+ Connect ServiceNow 
+
+ Overview 
+
+ Set up a ServiceNow data store 
+
+ ServiceNow configuration 
+
+ Connect Shopify 
+
+ Overview 
+
+ Set up a Shopify data store 
+
+ Shopify configuration 
+
+ Connect Smartsheet 
+
+ Overview 
+
+ Set up a Smartsheet data store 
+
+ Connect Solve Intelligence 
+
+ Overview 
+
+ Set up a Solve Intelligence data store 
+
+ Connect Sourcegraph 
+
+ Overview 
+
+ Set up a Sourcegraph data store 
+
+ Sourcegraph configuration 
+
+ Connect Slack 
+
+ Overview 
+
+ Set up a Slack data store 
+
+ Connect Squarespace 
+
+ Overview 
+
+ Set up a Squarespace data store 
+
+ Connect Starburst 
+
+ Overview 
+
+ Set up a Starburst data store 
+
+ Connect Streak 
+
+ Overview 
+
+ Set up a Streak data store 
+
+ Connect Stripe 
+
+ Overview 
+
+ Set up a Stripe data store 
+
+ Connect Superhuman Mail 
+
+ Overview 
+
+ Set up a Superhuman Mail data store 
+
+ Connect Supermetrics 
+
+ Overview 
+
+ Set up a Supermetrics data store 
+
+ Connect Supabase 
+
+ Overview 
+
+ Set up a Supabase data store 
+
+ Connect SurveyMonkey 
+
+ Overview 
+
+ Set up a SurveyMonkey data store 
+
+ Connect Taskrabbit 
+
+ Overview 
+
+ Set up a Taskrabbit data store 
+
+ Connect Tavily 
+
+ Overview 
+
+ Set up a Tavily data store 
+
+ Connect Trivago 
+
+ Overview 
+
+ Set up a Trivago data store 
+
+ Connect Twilio Docs 
+
+ Overview 
+
+ Set up a Twilio Docs data store 
+
+ Connect Vanta 
+
+ Overview 
+
+ Set up a Vanta data store 
+
+ Connect Viator 
+
+ Overview 
+
+ Set up a Viator data store 
+
+ Connect Webex Meetings 
+
+ Overview 
+
+ Set up a Webex Meetings data store 
+
+ Connect Wix 
+
+ Overview 
+
+ Set up a Wix data store 
+
+ Connect Windsor.ai 
+
+ Overview 
+
+ Set up a Windsor.ai data store 
+
+ Connect Wrike 
+
+ Overview 
+
+ Set up a Wrike data store 
+
+ Connect Zendesk 
+
+ Overview 
+
+ Set up a Zendesk data store 
+
+ Zendesk configuration 
+
+ Connect Zoho Books 
+
+ Overview 
+
+ Set up a Zoho Books data store 
+
+ Connect Zoho CRM 
+
+ Overview 
+
+ Set up a Zoho CRM data store 
+
+ Connect Zoho Desk 
+
+ Overview 
+
+ Set up a Zoho Desk data store 
+
+ Connect Zoho Projects 
+
+ Overview 
+
+ Set up a Zoho Projects data store 
+
+ Connect ZoomInfo 
+
+ Overview 
+
+ Set up a ZoomInfo data store 
+
+ Connect a custom MCP server 
+
+ Set up a custom MCP server data store 
+
+ Override constraint for custom MCP data stores 
+
+ Import MCP servers from Agent Registry 
+
+ Work with organization policy constraints 
+
+ Overview of managed policy constraints 
+
+ Configure allowed data sources 
+
+ Configure allowed egress FQDNs 
+
+ Custom connectors 
+
+ Overview 
+
+ Create a custom connector 
+
+ Provide or auto-detect a schema 
+
+ Parse and chunk documents 
+
+ Create an app 
+
+ Connect an app to an existing data store 
+
+ Manage actions 
+
+ Use Knowledge Graph and search 
+
+ Work with user events 
+
+ About user events 
+
+ Import historical user events 
+
+ Record real-time user events 
+
+ Troubleshoot data stores 
+
+ Configure AI developer tools 
+
+ Overview 
+
+ Configure settings 
+
+ View metrics 
+
+ Create a custom role to restrict access 
+
+ Turn off AI developer tools 
+
+ Configure agents 
+
+ Agents overview 
+
+ Register and manage Dialogflow agents 
+
+ Register and manage A2A agents 
+
+ Register and manage ADK agents 
+
+ Register and manage 
+
+ Configure cross-project access 
+
+ Register and manage A2UI agents 
+
+ Register and manage 
+
+ Tutorial: Host an agent on Cloud Run 
+
+ A2UI component gallery reference 
+
+ Add and manage A2A agents from Google Cloud Marketplace 
+
+ Import A2A agents from Agent Registry 
+
+ Share agents from Google Cloud console 
+
+ Programmatically invoke agents 
+
+ Call a specific agent with the StreamAssist API 
+
+ Call an agent using its registry A2A endpoint 
+
+ Configure settings 
+
+ Configure field settings 
+
+ Configure serving controls 
+
+ Configure autocomplete 
+
+ Basic autocomplete 
+
+ Advanced autocomplete 
+
+ Configure UI results 
+
+ Configure the app home page 
+
+ Configure results for the UI 
+
+ Configure facets for the UI 
+
+ Configure feedback 
+
+ Configure the assistant 
+
+ About custom preambles 
+
+ Manage web app features 
+
+ Manage observability settings 
+
+ Manage skills 
+
+ Configure prompt chips 
+
+ Configure Chrome Enterprise cloud-managed browsers 
+
+ Configure the Gemini Enterprise app for Slack 
+
+ Configure the mobile app 
+
+ Configure the mobile app 
+
+ Monitor usage 
+
+ View analytics data 
+
+ Monitor long-running operations 
+
+ Access connector error logs 
+
+ Access usage audit logs 
+
+ Access Cloud Audit Logs 
+
+ Access traces and spans 
+
+ Access metrics 
+
+ Maintain your apps and data stores 
+
+ Refresh structured and unstructured data 
+
+ Update a schema 
+
+ View a schema definition 
+
+ Purge a first-party data store 
+
+ Delete a schema for structured data 
+
+ Delete an app 
+
+ Delete a data store 
+
+ Evaluate search quality 
+
+ Get Started
+
+ Get Started with Google Cloud
+
+ Product List
+
+ Cloud Customer Care
+
+ Featured Products
+
+ Agent Platform
+
+ Apigee API Management
+
+ BigQuery
+
+ Compute Engine
+
+ Cloud CDN
+
+ Cloud Run
+
+ Cloud Storage
+
+ Cloud SQL
+
+ Gemini Enterprise
+
+ Google Kubernetes Engine
+
+ Looker
+
+ Cross-product Tools
+
+ Access and resources management
+
+ Costs and usage management
+
+ Infrastructure as code
+
+ SDK, languages, frameworks, and tools
+
+ Technology Areas
+
+ AI and ML
+
+ Application development
+
+ Application hosting
+
+ Compute
+
+ Data analytics and pipelines
+
+ Databases
+
+ Distributed, hybrid, and multicloud
+
+ Industry solutions
+
+ Migration
+
+ Networking
+
+ Observability and monitoring
+
+ Security
+
+ Storage
+
+ Note: This documentation set is for the Standard, Plus, Pay-as-you-go, and Frontline editions of Gemini Enterprise. For the Business edition documentation, see the Gemini Enterprise - Business edition Help Center .
+
+ Home
+
+ Documentation
+
+ AI and ML
+
+ Gemini Enterprise
+
+ Administrator guide
+
+ Send feedback
+
+ Overview 
+
+ Stay organized with collections
+
+ Save and categorize content based on your preferences.
+
+Custom connectors let you integrate external data sources that fall outside the Gemini Enterprise standard connector library, making your organization&#39;s unique data searchable and accessible using natural language, powered by Gemini and Google&#39;s advanced search intelligence. The custom connector interacts directly with the Discovery Engine API , which enables robust data storage, indexing, and intelligent search capabilities. The connector converts the source information into the standardized JSON-based Document format (structuring the content, metadata, and Access Control Lists (ACLs)) and ensures this data is organized into Data stores . These stores act as logical repositories, ideally representing a single document format, each with its own dedicated search index and configurations.
+
+How custom connectors work
+
+Custom connectors work by using an automated data pipeline to perform three key actions: Fetch, Transform, and Sync. This process ensures external data is correctly prepared and uploaded to Gemini Enterprise.
+
+Fetch: The connector pulls data, including documents, metadata, and permissions, from external system using its APIs, databases, or file formats.
+
+Transform: The connector converts raw data into the document format of the Discovery Engine, structures the content and metadata, and assigns a globally unique ID to each document. For access controls, you can use either Google-recognized identities directly or identity mapping for external users or custom groups.
+
+Sync: The connector uploads the documents to Gemini Enterprise data stores and keeps them updated through scheduled jobs. The data sync is performed using a data store created for an entity. For more information about creating data store, see Data store creation process . Choose a sync mode based on your needs: Incremental adds and updates data, while Full replaces the entire dataset. 
+
+ACLs and Identity mapping
+
+To manage document-level access, choose between two methods — Pure ACLs or Identity Mapping, depending on the identity format used by the data.
+
+Pure ACLs (AclInfo) : This method is used when the data source uses email-based identities recognized by (Google Cloud). This approach is ideal for directly defining who has access.
+
+Identity mapping: This method is used when the data source uses usernames,
+legacy IDs, or other external identity systems:
+
+It establishes a clear and one-to-one association between external
+identity groups (e.g., EXT1) and internal Identity Provider (IDP) users or
+groups (e.g., IDPUser1@example.com ).
+
+It allows the system to understand and apply
+group-based access controls from the source system, which is useful when an
+API returns group labels without full user memberships or for efficiently
+scaling ACLs without listing thousands of users per document.
+
+The identity mapping process requires resolving all nested or hierarchical
+identity structures into a flat list of direct mappings, typically in a
+specified JSON format.
+
+Use unique external identity group IDs (e.g., EXT1) for external identities
+to maintain system integrity. For more information and examples, see Map
+external identities .
+
+Data store creation process
+
+ Create the identity store: This store acts as the parent resource for all identity mappings. Upon creation, project-level Identity Provider (IDP) settings are automatically fetched. For more information, see Retrieve or create identity store .
+
+ Load external identity mappings into identity store: After creating the identity store, load the external identity data into it. For more information, see Ingest identity mapping into identity store .
+
+ Create and bind the entity data store: The entity data store can only be created after the identity store is successfully created and the identity mappings are loaded. You must bind the identity store to the entity data store during its creation. For more information about creating entity data store, see Create data store .
+
+ Data store creation process.
+
+Data sync
+
+There are two different architecture models for syncing data:
+
+ Architecture Model 1: Incremental upsert: The incremental upsert approach is best suited for scenarios where data is streaming and requires real-time updates. The connector leverages the Discovery Engine API to perform efficient, incremental upserts (inserting or updating data) by calling the appropriate functions with small changes as they occur. This focus on minimal change sizes and minimal delay keeps the document store highly current, even with fast-changing data.
+
+ Architecture Model 2: Comprehensive sync with Google Cloud Storage: This recommended approach offers a comprehensive set of data management features and high flexibility. It supports full syncs, which allow for data insertion, updating, and deletion across the entire dataset, and incremental syncs, which handle only inserts and updates by sending changes. This makes the approach robust for a wide range of data needs, particularly for managing larger or more complex data operations. This model utilizes a staging process (step 1 in the diagram) where the connector first writes the data to Google Cloud Storage (GCS), then leverages the Discovery Engine API to update the document store by calling the necessary import functions from the staged GCS location.
+
+Custom connectors are flexible enough to support a hybrid architecture, allowing you to implement incremental upsert for fast-changing data and comprehensive sync for scheduled full data updates or deletions.
+
+ Data sync options.
+
+ Send feedback
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+
+Last updated 2026-09-18 UTC.
+
+ Need to tell us more?
+
+ [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-18 UTC."],[],[]]
+
+Products and pricing
+
+ See all products
+
+ Google Cloud pricing
+
+ Google Cloud Marketplace
+
+ Contact sales
+
+Support
+
+ Community forums
+
+ Support
+
+ Release Notes
+
+ System status
+
+Resources
+
+ GitHub
+
+ Getting Started with Google Cloud
+
+ Code samples
+
+ Cloud Architecture Center
+
+ Training and Certification
+
+Engage
+
+ Blog
+
+ Events
+
+ X (Twitter)
+
+ Google Cloud on YouTube
+
+ Google Cloud Tech on YouTube
+
+ Android
+
+ Chrome
+
+ Firebase
+
+ Google AI
+
+ About Google
+
+ Privacy
+
+ Site terms
+
+ Google Cloud terms
+
+ Manage cookies
+
+ Our third decade of climate action: join us
+
+ Sign up for the Google Cloud newsletter 
+
+ Subscribe
+
+ English 
+
+ Deutsch 
+
+ Español – América Latina 
+
+ Français 
+
+ Indonesia 
+
+ Italiano 
+
+ Português – Brasil 
+
+ עברית 
+
+ 中文 – 简体 
+
+ 中文 – 繁體 
+
+ 日本語 
+
+ 한국어 
+
+ 

@@ -1,0 +1,367 @@
+ 
+
+ Note: This documentation set is for the Standard, Plus, Pay-as-you-go, and Frontline editions of Gemini Enterprise. For the Business edition documentation, see the Gemini Enterprise - Business edition Help Center .
+
+ Home
+
+ Documentation
+
+ AI and ML
+
+ Gemini Enterprise
+
+ Administrator guide
+
+ Send feedback
+
+ Set up your custom MCP server data store 
+
+ Stay organized with collections
+
+ Save and categorize content based on your preferences.
+
+ Key Term: In Gemini Enterprise,
+the term data store can be used interchangeably with the term
+ connector or data connector . 
+ Key Term: In the Model Context Protocol
+(MCP) specification, capabilities are called tools . In
+Gemini Enterprise data stores, these tools are referred to as
+ actions . The two terms can be used interchangeably. 
+
+This page explains how to connect your data sources using a custom Model Context
+Protocol (MCP) server, letting Gemini Enterprise securely access your company&#39;s
+private data.
+
+The custom MCP data store lets you integrate public tools, as well as
+MCP-compliant third-party systems, directly into Gemini Enterprise. This
+approach provides a unified method to connect legacy systems when standard
+connectors are unavailable. With this integration, your AI agents can access
+business-critical information and specialized logic within your infrastructure.
+
+Limitations
+
+The custom MCP server has the following limitations:
+
+ Server-Sent Events (SSE) : The old SSE transport is not supported. The
+connector exclusively supports the new StreamableHTTP transport.
+
+ TLS certificate requirement : Both public and private MCP servers must
+be configured with a TLS certificate signed by a publicly trusted Certificate
+Authority (CA). Self-signed certificates are not supported.
+
+ Actions limit : To ensure optimal performance, limit the number of enabled
+actions in your custom MCP server data store to 100 at a time. For more
+information, see Enable actions .
+
+ Existing data stores : Connecting to an existing data store is not
+supported. You must create and register a new custom MCP server data store
+directly within your Gemini Enterprise app.
+
+ VPC Service Controls : Egress controls are enforced through organization
+policy constraints, such as allowedEgressFqdns and allowedDataSources ,
+rather than runtime traffic enforcement. Custom MCP servers are supported in
+VPC Service Controls-enabled projects when you explicitly allow the required
+egress domains and data sources. For more information, see
+ Override the organization policy for Custom MCP data stores .
+
+Before you begin
+
+Before you set up your custom MCP server connection, ensure you perform the
+following:
+
+Several organization policy constraints apply to Custom MCP data stores. You
+must:
+
+Override the organization policy constraint that blocks Custom MCP
+data store creation. For more information, see
+ Override the organization policy for Custom MCP data stores .
+
+Explicitly allow the fully qualified domain names (FQDNs) for your custom
+MCP server URL, authorization URL, and token URL. For more information, see
+ Configure allowed egress FQDNs .
+
+ Note: You only need to add the domain name, not the full URL. For example,
+for an MCP server
+URL of https://api.cymbal.com/mcp with authorization and token URLs on
+ auth.cymbal.com , allow both api.cymbal.com and auth.cymbal.com . 
+
+If project enforcement is enabled or the project is VPC Service Controls-protected, you
+must add custom_mcp to the allowed data sources. See
+ Configure allowed data sources .
+
+Grant the Discovery Engine Editor role
+( roles/discoveryengine.editor ). This role is required for your
+administrator to create the data store.
+
+To grant this role, do the following:
+
+In the Google Cloud console, go to the IAM page.
+
+ Go
+to IAM 
+
+Locate the user account, and click the edit Edit icon.
+
+Grant the Discovery Engine Editor role to your user.
+For more information, see IAM
+roles and permissions .
+
+Register Gemini Enterprise as an OAuth client application with your identity
+provider (for example, Okta, Azure AD, or Google).
+
+To register the app, do the following:
+
+Set the authorization redirect URL to
+ https://vertexaisearch.cloud.google.com/oauth-redirect .
+
+Grant necessary OAuth scopes to the client app.
+
+After you register the client app, obtain the client_id and client_secret 
+that are needed for configuring the custom MCP server data store in the
+following steps.
+
+If your custom MCP server is hosted on Cloud Run and requires
+authentication, grant the Cloud Run Invoker ( roles/run.invoker ) role to
+the service agent. For more information, see
+ Set up authentication for a custom MCP server on Cloud Run .
+
+Set up authentication for a custom MCP server on Cloud Run
+
+If your custom MCP server is hosted on Cloud Run and requires
+authentication, Gemini Enterprise can securely connect to private services
+that do not allow public access.
+
+How authentication works
+
+When you connect to a Cloud Run service, Gemini Enterprise automatically sends the following authorization headers in each request:
+
+ X-Serverless-Authorization : Contains a Google-signed ID token that authenticates the Gemini Enterprise service agent.
+
+ Authorization : Preserves the user's OAuth token intact.
+
+ Note : Gemini Enterprise automatically sends the Google-signed ID token only when you connect to a default Cloud Run URL that ends in .run.app . The ID token is not sent if your service uses a custom domain. 
+
+Grant access to the service agent
+
+To authorize Gemini Enterprise to invoke your private Cloud Run
+service, grant the Cloud Run Invoker ( roles/run.invoker ) role to the
+Gemini Enterprise service agent on the receiving service.
+
+The service agent email uses the following format: 
+service- PROJECT_NUMBER @gcp-sa-discoveryengine.iam.gserviceaccount.com
+
+Replace PROJECT_NUMBER with the project number of the
+Google Cloud project that hosts your Gemini Enterprise app.
+
+For instructions on how to grant IAM roles on a service, see
+ Authenticating service-to-service .
+
+Create the custom MCP server data store
+
+ Note: By default, outbound traffic to your custom MCP server doesn&#39;t route
+through Agent Gateway 
+unless you configure egress routing in the Advanced options section. 
+
+To set up the configuration flow, follow these steps:
+
+In the Google Cloud console, go to the Gemini Enterprise page.
+
+ Gemini Enterprise 
+
+In the navigation menu, click Data stores .
+
+Click add Create
+data store .
+
+On the Select a data source page, enter Custom MCP Server into the
+ Search sources field. The Custom MCP Server card
+displays.
+
+Click Add MCP server . The MCP Server Configuration page displays.
+
+In the Authentication settings section, select one of the following
+options:
+
+ No authentication : Select this option if your MCP server does not
+require authentication.
+
+Enter the MCP Server URL . This is the endpoint where your MCP
+server is hosted. It must be an HTTPS URL. Gemini Enterprise
+only supports the StreamableHTTP transport. The URL often ends
+with /mcp . For example, https://mcp.example.com/mcp .
+
+ Note : If your server is hosted on Cloud Run, enter your default service URL ending in .run.app . Gemini Enterprise automatically sends a Google-signed ID token for IAM authentication. 
+
+Click Continue .
+
+ OAuth 2.0 : Select this option to add authentication.
+
+Enter the values in the following required fields:
+
+ Field 
+ Description 
+
+ MCP Server URL 
+ This is the endpoint where your MCP server is hosted. It must be an HTTPS URL. Gemini Enterprise only supports the StreamableHTTP transport. The URL often ends with /mcp . For example, https://mcp.example.com/mcp .
+ Note : If your server is hosted on Cloud Run, enter your default service URL ending in .run.app . Gemini Enterprise automatically sends a Google-signed ID token for IAM authentication. 
+
+ Authorization URL 
+ The base URL for the user to authorize Gemini Enterprise to access your MCP server. For example, https://mcp.example.com/authorize .
+ Note : Enter only the base URL, without query parameters. Gemini Enterprise automatically appends standard OAuth parameters (such as client_id , redirect_uri , and scope ) during authorization. If your authorization server requires additional parameters, specify them in the Authorization URL Parameters field. 
+
+ Authorization URL Parameters 
+ Optional. Any additional parameters required by your authorization
+ URL. For example, to get a refresh token from a Google MCP server,
+ enter &access_type=offline&prompt=consent .
+ If your
+ authorization server requires an audience parameter, you
+ can add it as a parameter in this setting. For example,
+ &audience=https://api.your-domain.com/v1/ .
+
+ Token URL 
+
+ The endpoint used to exchange the authorization code for an access
+ token during OAuth authentication. For example,
+ https://mcp.cymbal.com/token .
+
+ Client ID 
+ The unique identifier of the OAuth app that you registered in your identity provider to represent Gemini Enterprise. 
+
+ Enable PKCE Support 
+
+ Optional. Select this checkbox to enable Proof Key for Code
+ Exchange (PKCE, RFC 7636) for additional OAuth security.
+ We recommend this setting if your MCP server's OAuth provider
+ supports PKCE.
+
+ Client Secret 
+
+ The confidential key associated with the OAuth app that you
+ registered in
+ your identity provider to represent Gemini Enterprise.
+
+ Scopes 
+ The permissions that define what actions Gemini Enterprise is allowed to perform on behalf of a user, or what data it's allowed to access. The scopes are used to access the MCP server. Gemini Enterprise requests these scopes during user authorization. Ensure that your OAuth app is configured to use these scopes.
+ When you specify scopes, consider the following:
+
+Provide a space-separated list of scopes. For example, for Box, you provide: root_readwrite manage_managed_users manage_groups .
+
+Ensure the scopes provided are sufficient to let the user sign in and use the tools or actions enabled by the administrator; otherwise, the agent cannot access your app.
+
+A common scope is offline_access , which lets the app request a refresh token.
+
+Click Verify Auth .
+
+Click Continue .
+
+Click Continue .
+
+In the Configure your data connector section, select the Location of
+your data connector from the Multi-region field list.
+
+In Your data connector name field, enter a name for your data store.
+
+Click Create . Gemini Enterprise creates your data store and
+displays your data stores on the Data Stores page.
+
+ Note: By default, no tools or actions from
+your custom MCP servers are enabled. You must enable the tools or actions.
+For more information, see Enable actions . 
+
+ Verify the state of the custom MCP server 
+
+To verify the state of the custom MCP server, do the following:
+
+Click your data store in the Data stores list. The details of
+your data store display.
+
+Monitor the state of your data store until it changes to
+ Active . After the state of your data store changes from Creating 
+to Active , your custom MCP server data store is ready to be used.
+
+Enable actions
+
+ Key Term: In the Model Context Protocol
+(MCP) specification, capabilities are called tools . In
+Gemini Enterprise data stores, these tools are referred to as
+ actions . The two terms can be used interchangeably. 
+
+By default, all actions are turned off. When you connect an MCP server, all of
+its tools are imported and displayed as actions in the Gemini Enterprise
+data store. To ensure an
+optimal experience, you can enable up to 100 actions at a time. To enable these
+actions for your users, follow these steps:
+
+Go to your custom MCP server data store.
+
+Click Actions &gt; Reload custom actions to reauthenticate.
+
+ Note: This action performs a tools/list call
+on the MCP server to retrieve available tools, which are then displayed on
+the screen. 
+
+Select the actions to enable.
+
+Click Enable actions .
+
+Configure annotations to skip user confirmation
+
+When tools from your MCP server are imported as actions into the
+Gemini Enterprise data store, Gemini Enterprise checks their tool annotations to
+determine if user confirmation is required. By default, all calls to any
+action require confirmation from the user, because Gemini Enterprise assumes
+that any operation is potentially destructive and can mutate data.
+
+If your server provides read-only functionality (such as querying a database)
+and you want to skip this confirmation for a smoother user experience, you can
+configure annotations in the specifications of your MCP tools before they are
+imported as actions.
+
+We recommend configuring the following annotations in your MCP tool definitions
+to manage user confirmation for data store actions:
+
+ readOnlyHint : Add this annotation to your tool definition if the
+ operation is non-destructive and only reads data. The tool execution bypasses
+ user confirmation.
+
+ destructiveHint : Explicitly use this annotation if the tool modifies
+ data. This maintains the default confirmation behavior.
+
+ For example, in Python: 
+
+ @mcp . tool ( annotations = { 
+ "destructiveHint" : False , 
+ "readOnlyHint" : True 
+ }) 
+
+To ensure that your changes are reflected in your setup, reload custom actions.
+For more information, see Enable actions .
+
+What's next
+
+To protect against malicious inputs and outputs, enable Model Armor. For more
+information, see
+ Enable Model Armor .
+
+If you want to query your MCP server using a custom agent, instead of the
+Gemini Enterprise assistant, see
+ Create an agent .
+
+If the data store is not connected to an app, see Connect a data store to
+app and authorize
+Gemini Enterprise .
+
+To use your agent that&#39;s connected to your custom MCP server, see Use an
+agent .
+
+ Send feedback
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+
+Last updated 2026-09-18 UTC.
+
+ Need to tell us more?
+
+ [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-18 UTC."],[],[]]
+
+ 
