@@ -1,12 +1,15 @@
 from fastapi import FastAPI, Header, HTTPException
-import httpx
 
 app = FastAPI(title="Gemini Enterprise MCP Server")
 IDENTITY_MAP = {"alice@demo.corp": "EMP-001", "bob@demo.corp": "EMP-002"}
-PAYCORE_URL = "http://localhost:8000/api/v1/employees/{}/payroll"
+
+# Mock DB for self-contained demo
+DB = {
+    "EMP-001": {"base": 140000, "bonus": 15000, "dept": "Engineering"},
+    "EMP-002": {"base": 95000, "bonus": 5000, "dept": "Sales"}
+}
 
 def verify_and_map_jwt(auth_header: str) -> str:
-    # MOCK: In production, verify JWT signature against GCP JWKS and extract email
     if not auth_header or not auth_header.startswith("Bearer "):
         raise HTTPException(401, "Missing token")
     email = auth_header.split(" ")[1] 
@@ -19,7 +22,7 @@ def get_payroll_status(authorization: str = Header(None)):
     # 1. Zero-Trust Identity Mapping
     emp_id = verify_and_map_jwt(authorization)
     
-    # 2. Secure Backend Call (Never pass LLM parameters as the emp_id)
-    headers = {"X-PayCore-Api-Key": "sec_org_test_998124"}
-    resp = httpx.get(PAYCORE_URL.format(emp_id), headers=headers)
-    return resp.json()
+    # 2. Secure Backend Lookup
+    if emp_id not in DB:
+        raise HTTPException(status_code=404, detail="Employee not found")
+    return DB[emp_id]

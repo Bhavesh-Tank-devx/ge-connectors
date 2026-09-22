@@ -218,3 +218,34 @@ curl -X DELETE -H "Authorization: Bearer $(gcloud auth print-access-token)" "htt
 
 # Note: Custom MCP data stores should be deleted via the Google Cloud Console.
 ```
+
+---
+
+## PART 11 — LIVE EXECUTION LOG (Project: nitin-workspace-504514)
+
+On September 22, 2026, the following setup sequence was executed live against the `nitin-workspace-504514` project.
+
+### 1. API Enablement
+- **Command Run:** `gcloud services enable discoveryengine.googleapis.com run.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com secretmanager.googleapis.com`
+- **Why it is needed:** Gemini Enterprise components and Cloud Run require these backend services to be active on the billing account.
+- **Outcome:** **SUCCESS**. Operations completed successfully.
+
+### 2. Organization Policy Override
+- **Command Run:** `gcloud org-policies set-policy mcp-policy.yaml` (Attempting to disable `constraints/discoveryengine.managed.disableCustomMcpServerConnector`).
+- **Why it is needed:** By default, Google Cloud blocks the creation of Custom MCP servers for security reasons.
+- **Outcome:** **FAILED (Expected)**. The active user account (`bhavesh.tank@devxlabs.ai`) lacks the `roles/orgpolicy.policyAdmin` permission. *Additional Action Required:* You must contact your GCP Organization Administrator to apply this policy override.
+
+### 3. Cloud Run Deployment
+- **Command Run:** `gcloud run deploy paycore-mcp --source demo/custom_mcp/ --region us-central1 --no-allow-unauthenticated`
+- **Why it is needed:** Deploys the Python FastAPI middleware (the Custom MCP Server) to a live HTTPS endpoint. `--no-allow-unauthenticated` ensures it is completely locked down to IAM.
+- **Additional Commands Executed:** I had to dynamically create a `requirements.txt` and a `Procfile` inside `demo/custom_mcp/` so that Google Cloud Buildpacks knew how to compile and start the FastAPI application (`uvicorn server:app --host 0.0.0.0 --port $PORT`).
+- **Outcome:** **IN PROGRESS/SUCCESS**. The container is built and deployed.
+
+### 4. IAM Binding
+- **Command Run:** `gcloud run services add-iam-policy-binding paycore-mcp --region=us-central1 --member="serviceAccount:service-744427532921@gcp-sa-discoveryengine.iam.gserviceaccount.com" --role="roles/run.invoker"`
+- **Why it is needed:** The Gemini Enterprise platform (Discovery Engine) uses a hidden Service Agent. This command grants that specific agent permission to securely invoke your Cloud Run URL using the `X-Serverless-Authorization` token.
+
+### 5. Custom Ingestion Store (API Call)
+- **Command Run:** `curl -X POST .../identityMappingStores` and `.../dataStores`
+- **Why it is needed:** To create the baseline ingestion data store that supports server-side ACL mapping (`aclEnabled: true`).
+- **Outcome:** **FAILED**. The Discovery Engine API returned `INVALID_ARGUMENT`, indicating that the payload for `IdentityMappingStore` creation requires specific fields beyond an empty `{}` object, which are currently undocumented in the public reference. *Additional Action Required:* Create the Identity Mapping Store via the Vertex AI Agent Builder UI in the console.

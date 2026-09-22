@@ -1,0 +1,4 @@
+name: projects/nitin-workspace-504514/policies/discoveryengine.managed.disableCustomMcpServerConnector
+spec:
+  rules:
+  - enforce: false
